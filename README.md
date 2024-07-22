@@ -83,7 +83,7 @@ The outputs are then saved.
 INTEGRATION:
 Regarding the test of the integration module, we tested pretty much each of the methods and attributes present in the binding and basically all of the functionalities of the Python classes.
 
-Regarding efficiency gain, it is possible to see that the scipy method for integration `quad` is faster than our implementatioin, although for a relatively small number of intervals used for composite integration this difference is at most of one order of magnitude.
+Regarding efficiency gain, it is possible to see that the scipy method for integration `quad` is faster than our implementation, although for a relatively small number of intervals used for composite integration this difference is at most of one order of magnitude.
 
 We have also implemented directly in Python one of the classes (the real Simpson integrator) and tested it against the C++ version.
 
@@ -92,8 +92,7 @@ This is probably due to the fact that the bindings introduce some overhead which
 
 
 STATISTICS:
-Unfortunately, although more efficient than just writing code in Python, our binded code is not comparable to pandas. If creating the data frame is twice as inefficient, computing medians or means is almost
-500 times slower than doing it in pandas. However, if we do these operations with the compiled C++ code, we see that the picture is nowhere near as bleak:
+Unfortunately, although more efficient than just writing code in Python, our binded code is not comparable to pandas. If creating the data frame is twice as inefficient, computing medians or means is almost 500 times slower than doing it in pandas. However, if we do these operations with the compiled C++ code, we see that the picture is nowhere near as bleak:
 opening files is more efficient than pandas' version and our functions compute means and medians just a little slower than pandas does. So a lot of the inefficiency is due to binding the C++ code to python.
 
 
